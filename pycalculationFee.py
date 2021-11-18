@@ -34,5 +34,5 @@ def calculationfee(list):
 
 
 if __name__ == '__main__':
-    calculationfee([11,112])
+    print(calculationfee([11,112])) 
     
