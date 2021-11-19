@@ -2,7 +2,7 @@ from typing import Mapping
 
 
 def calculationfee(list):
-    '''计算阶梯电费
+    '''广州南方电网计算阶梯电费
     输入：[月份，电度数]
     '''
     month=list[0]
@@ -35,4 +35,4 @@ def calculationfee(list):
 
 if __name__ == '__main__':
     print(calculationfee([11,112])) 
-    #test2
+    
