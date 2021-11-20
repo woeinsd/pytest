@@ -4,6 +4,7 @@ from typing import Mapping
 def calculationfee(list):
     '''广州南方电网计算阶梯电费
     输入：[月份，电度数]
+    返回：费用
     '''
     month=list[0]
     summaryBox=float(list[1])
@@ -34,5 +35,5 @@ def calculationfee(list):
 
 
 if __name__ == '__main__':
-    print(calculationfee([11,112])) 
+    print(calculationfee([11,138])) 
     
