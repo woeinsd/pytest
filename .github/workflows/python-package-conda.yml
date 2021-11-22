@@ -20,11 +20,11 @@ jobs:
         python pycalculationFee.py
       env:
         MY_GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
-    - name: Run getactions.py
+    - name: Run getfee.py
 
       env:
         ID: ${{ secrets.ID }}
         PW: ${{ secrets.PW }}
       run: |
-        python getactions.py      
+        python getfee.py      
 
