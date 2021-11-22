@@ -14,7 +14,7 @@ import os #运行linux命令模块
 import paramiko #登录模块
 import re
 import shelve
-import sendNotify
+ 
 import  os
 import github
 
@@ -98,5 +98,5 @@ for data in m_fullcalendar[0].find_all("div",class_="ant-fullcalendar-date"):
 
 print(summaryBoxlist)
 
-# sendNotify.sendNotify().serverNotify("电费："+str(Calfee(list_month_sum))+"元",summaryBoxlist)
+ 
 
