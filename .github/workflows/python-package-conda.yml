@@ -21,9 +21,10 @@ jobs:
       env:
         MY_GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
     - name: Run getactions.py
-      run: |
-        python getactions.py
+
       env:
         ID: ${{ secrets.ID }}
         PW: ${{ secrets.PW }}
+      run: |
+        python getactions.py      
 
