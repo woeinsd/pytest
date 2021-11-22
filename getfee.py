@@ -16,8 +16,7 @@ import re
 import shelve
  
 import  os
-import github
-
+ 
 
 def Calfee(list):
     month=list[0]
