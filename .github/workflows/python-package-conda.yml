@@ -24,6 +24,6 @@ jobs:
       run: |
         python getactions.py
       env:
-        MY_GITHUB_id: ${{ secrets.MY_GITHUB_ID }}
-        MY_GITHUB_pw: ${{ secrets.MY_GITHUB_PW }}
+        MY_GITHUB_ID: ${{ secrets.MY_GITHUB_ID }}
+        MY_GITHUB_PW: ${{ secrets.MY_GITHUB_PW }}
 
