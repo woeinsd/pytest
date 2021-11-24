@@ -5,6 +5,7 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.ui import WebDriverWait
 from datetime import *
 import time
+import datetime
 import pymysql
 from bs4 import BeautifulSoup
 import urllib.request
@@ -109,4 +110,5 @@ print(summaryBoxlist)
 sendNotify.sendNotify().serverNotify("电费","总额："+str(sum_total_fee)+"元，"+sendermessage+'，'+str(summaryBoxlist))
 
  
-
+dt=str(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
+print(dt)
