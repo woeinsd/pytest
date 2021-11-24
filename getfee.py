@@ -17,32 +17,41 @@ import shelve
 import sendNotify 
 import  os
  
+sendermessage=''
 
 def Calfee(list):
     month=list[0]
     summaryBox=float(list[1])
     if int(month) in (1,2,3,4,11,12):
         if summaryBox<=201:
-            print("冬季第一档：剩余",201-summaryBox)
+
+            sendermessage="冬季第一档：剩余"+str(201-summaryBox)
+            print(sendermessage)
             sum=summaryBox*0.5886
         elif 201<summaryBox<=401:
-            print("冬季第二档：剩余",401-summaryBox)
+            sendermessage="冬季第二档：剩余"+str(401-summaryBox)
+            print(sendermessage)
             sum=201*0.5886+(summaryBox-201)*0.6388
         elif summaryBox>401:
-            print("冬季第三档")
+            sendermessage="冬季第三档"
+            print(sendermessage)
             sum=201*0.5886+((401-201)*0.6388)+((summaryBox-401)*0.8888)
     elif int(month) in (5,6,7,8,9,10):
         if summaryBox<=261:
-            print("夏季第一档")
+            sendermessage="夏季第一档：剩余"+str(261-summaryBox)
+            print(sendermessage)
             sum=summaryBox*0.5886
         elif 261<summaryBox<=601:
-            print("夏季第二档")
+            sendermessage="夏季第二档：剩余"+str(601-summaryBox)
+            print(sendermessage)
             sum=261*0.5886+(summaryBox-261)*0.6388
         elif summaryBox>601:
-            print("夏季第三档")
+            sendermessage="夏季第三档"
+            print(sendermessage)
             sum=261*0.5886+(601-261)*0.6388+(summaryBox-601)*0.8888
     else:
-        print("没数据")
+        sendermessage="没数据"
+        print(sendermessage)
         sum=0
     return sum
 
@@ -97,7 +106,7 @@ for data in m_fullcalendar[0].find_all("div",class_="ant-fullcalendar-date"):
         summaryBoxlist.append(dufont)
 
 print(summaryBoxlist)
-sendNotify.sendNotify().serverNotify("电费","总额："+str(sum_total_fee)+"元，"+str(summaryBoxlist))
+sendNotify.sendNotify().serverNotify("电费","总额："+str(sum_total_fee)+"元，"+sendermessage+'，'+str(summaryBoxlist))
 
  
 
