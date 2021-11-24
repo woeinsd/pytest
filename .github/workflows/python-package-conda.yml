@@ -27,6 +27,7 @@ jobs:
       env:
         ID: ${{ secrets.ID }}
         PW: ${{ secrets.PW }}
+        SCKEY:${{ secrets.PW }}
       run: |
         python getfee.py      
 

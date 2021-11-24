@@ -14,7 +14,7 @@ import os #运行linux命令模块
 import paramiko #登录模块
 import re
 import shelve
- 
+import sendNotify 
 import  os
  
 
@@ -85,7 +85,8 @@ for tag in soup.find_all('div',class_="summaryBox"):
     print(s )
     summaryBoxlist.append(s)
     list_month_sum=re.findall(r"\d+\.?\d*",s)
-    print(Calfee(list_month_sum),"元")
+    sum_total_fee=Calfee(list_month_sum)
+    print(sum_total_fee,"元")
 m_fullcalendar=soup.find_all ("tbody",class_="ant-fullcalendar-tbody")
 for data in m_fullcalendar[0].find_all("div",class_="ant-fullcalendar-date"):
 
@@ -96,6 +97,7 @@ for data in m_fullcalendar[0].find_all("div",class_="ant-fullcalendar-date"):
         summaryBoxlist.append(dufont)
 
 print(summaryBoxlist)
+sendNotify.sendNotify().serverNotify("电费","总额："+str(sum_total_fee)+"元，"+str(summaryBoxlist))
 
  
 
