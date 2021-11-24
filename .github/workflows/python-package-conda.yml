@@ -1,7 +1,7 @@
 name: cal
 on:
   schedule:
-    - cron: 40 11 * * *
+    - cron: 40 07 * * *
 
 
 jobs:
