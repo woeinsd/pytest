@@ -18,9 +18,10 @@ import shelve
 import sendNotify 
 import  os
  
-sendermessage=''
+ 
 
 def Calfee(list):
+    global sendermessage
     month=list[0]
     summaryBox=float(list[1])
     if int(month) in (1,2,3,4,11,12):
@@ -107,7 +108,7 @@ for data in m_fullcalendar[0].find_all("div",class_="ant-fullcalendar-date"):
         summaryBoxlist.append(dufont)
 
 print(summaryBoxlist)
-sendNotify.sendNotify().serverNotify("电费","总额："+str(sum_total_fee)+"元，"+sendermessage+'，'+str(summaryBoxlist))
+sendNotify.sendNotify().serverNotify("电费","总额："+str(sum_total_fee)+"元，剩余电量："+sendermessage+'，'+str(summaryBoxlist))
 
  
 dt=str(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
