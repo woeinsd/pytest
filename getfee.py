@@ -56,7 +56,8 @@ def Calfee(list):
         print(sendermessage)
         sum=0
     return sum
-
+dt=str(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
+print(dt)
 access_id = os.environ['ID']
 access_pw = os.environ['PW']
 

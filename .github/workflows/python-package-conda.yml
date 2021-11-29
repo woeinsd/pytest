@@ -1,7 +1,7 @@
 name: cal
 on:
   schedule:
-    - cron: 50 07 * * *   #使用的是UTC时间
+    - cron: 50 06 * * *   #使用的是UTC时间
 
 
 jobs:
