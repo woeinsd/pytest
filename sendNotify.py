@@ -10,10 +10,10 @@ import  urllib
 from urllib import parse
 sendkey = os.environ['SCKEY']
 def readSecret( key, default=""):
-    if key in os.environ and not os.environ[key].strip() == '':
-        return os.environ[key]
-    else:
-        return default
+        if key in os.environ and not os.environ[key].strip() == '':
+            return os.environ[key]
+        else:
+            return default
 class sendNotify:
     # =======================================微信server酱通知设置区域===========================================
     # 此处填你申请的SCKEY.
