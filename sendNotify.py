@@ -9,7 +9,7 @@ import os
 import  urllib
 from urllib import parse
 sendkey = os.environ['SCKEY']
-def readSecret(key):
+def readSecret( key, default=""):
     if key in os.environ and not os.environ[key].strip() == '':
         return os.environ[key]
     else:
