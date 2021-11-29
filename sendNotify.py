@@ -103,7 +103,12 @@ class sendNotify:
             }
 
             response = requests.request("POST", "http://pushplus.hxtrip.com/send", headers=headers, data=json.dumps(payload))
-        print(response.text)
+            print(response.text)
+        else:
+            print('\n您未提供PUSH_PLUS_TOKEN，取消微信推送消息通知\n')
+            pass
+
+            
     def BarkNotify(self, text, desp):
         if self.BARK_PUSH != '':
             url = self.BARK_PUSH + '/' + \
