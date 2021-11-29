@@ -109,7 +109,7 @@ for data in m_fullcalendar[0].find_all("div",class_="ant-fullcalendar-date"):
 
 print(summaryBoxlist)
 sendNotify.sendNotify().serverNotify("电费","总额："+str(sum_total_fee)+"元，剩余电量："+sendermessage+'，'+str(summaryBoxlist))
-
+sendNotify.sendNotify().pushPlusNotify("电费","总额："+str(sum_total_fee)+"元，剩余："+sendermessage+'，'+str(summaryBoxlist))
  
 dt=str(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
 print(dt)
