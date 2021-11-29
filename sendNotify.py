@@ -10,8 +10,10 @@ import  urllib
 from urllib import parse
 sendkey = os.environ['SCKEY']
 def readSecret(key):
-    value=str(sendkey)
-    return value
+    if key in os.environ and not os.environ[key].strip() == '':
+        return os.environ[key]
+    else:
+        return default
 class sendNotify:
     # =======================================微信server酱通知设置区域===========================================
     # 此处填你申请的SCKEY.
@@ -94,10 +96,14 @@ class sendNotify:
 
     def pushPlusNotify(self, text, desp):
         if self.PUSH_PLUS_TOKEN != '':
-            desp = re.sub('[\n\r]', '<br>', desp, 0)
-            response = json.dumps(requests.post('http://www.pushplus.plus/send', data={
-                'token': self.PUSH_PLUS_TOKEN, 'title': text, 'content': desp, 'topic': self.PUSH_PLUS_USER}, headers={'Content-Type': 'application/json;charset=utf-8'}).json(), ensure_ascii=False)
+                # desp = re.sub('[\n\r]', '<br>', desp, 0)
+            payload = {'token': self.PUSH_PLUS_TOKEN, 'title':text, 'content':desp}
+            headers = {
+                'Content-Type': 'application/json;charset=utf-8'
+            }
 
+            response = requests.request("POST", "http://pushplus.hxtrip.com/send", headers=headers, data=json.dumps(payload))
+        print(response.text)
     def BarkNotify(self, text, desp):
         if self.BARK_PUSH != '':
             url = self.BARK_PUSH + '/' + \
