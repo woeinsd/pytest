@@ -28,6 +28,7 @@ jobs:
         ID: ${{ secrets.ID }}
         PW: ${{ secrets.PW }}
         SCKEY: ${{ secrets.SCKEY }}
+        SCKEY2: ${{ secrets.PUSH_PLUS_TOKEN}}
       run: |
         python getfee.py      
 
