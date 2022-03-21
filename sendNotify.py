@@ -102,7 +102,7 @@ class sendNotify:
                 'Content-Type': 'application/json;charset=utf-8'
             }
 
-            response = requests.request("POST", "http://pushplus.hxtrip.com/send", headers=headers, data=json.dumps(payload))
+            response = requests.request("POST", "http://www.pushplus.plus/send", headers=headers, data=json.dumps(payload))
             print(response.text)
         else:
             print('\n您未提供PUSH_PLUS_TOKEN，取消微信推送消息通知\n')
